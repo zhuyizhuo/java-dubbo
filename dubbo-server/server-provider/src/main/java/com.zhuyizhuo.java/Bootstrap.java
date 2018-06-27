@@ -12,6 +12,7 @@ public class Bootstrap {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo-server.xml");
         context.start();
 
+        System.out.println("start...");
         System.in.read(); //阻塞当前进程
     }
 }
