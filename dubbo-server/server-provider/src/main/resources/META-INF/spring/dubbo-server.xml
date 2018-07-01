@@ -7,12 +7,13 @@
     <dubbo:application name="dubbo-server" owner="yizhuo"/>
 
     <!--注册中心-->
-    <dubbo:registry id="zk1" address="zookeeper://zookeeper.com:2181"/>
+   <!-- <dubbo:registry id="zk1" address="zookeeper://zookeeper.com:2181"/>-->
+    <dubbo:registry id="zk1" address="N/A"/>
 
-    <dubbo:protocol port="20880" name="dubbo"/>
+    <dubbo:protocol port="20880" name="dubbo" host="www.zhuyizhuo.com"/>
 
     <dubbo:service interface="com.zhuyizhuo.java.IHelloService"
-                   ref="helloService" protocol="dubbo" registry="zk1"/>
+                   ref="helloService" protocol="dubbo" version="1.0.0"/>
 
     <bean id="helloService" class="com.zhuyizhuo.java.HelloServiceImpl"/>
 
